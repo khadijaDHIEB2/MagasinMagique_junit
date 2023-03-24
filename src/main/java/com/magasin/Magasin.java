@@ -10,11 +10,21 @@ class Magasin {
     public void updateQuality() {
         for (Item item : items) {
             switch (item.name) {
-                case "Comté" -> updateComte(item);
-                case "Kryptonite" -> updateKryptonite(item);
-                case "Pass VIP Concert" -> updatePassVIP(item);
-                case "Magic product" -> updateMagic(item);
-                default -> updateLamda(item);
+                case "Comté" :
+                    updateComte(item);
+                    break;
+                case "Kryptonite" :
+                    updateKryptonite(item);
+                    break;
+                case "Pass VIP Concert" :
+                    updatePassVIP(item);
+                    break;
+                case "Magic product" :
+                    updateMagic(item);
+                    break;
+                default :
+                    updateLamda(item);
+                    break;
             }
         }
     }
