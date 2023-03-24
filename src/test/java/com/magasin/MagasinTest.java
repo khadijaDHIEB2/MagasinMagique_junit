@@ -21,12 +21,12 @@ class MagasinTest {
 
     @Test
     void updateQualityGeneral() {
-        Item[] items = new Item[] { new Item("Kryptonite", 0, 80) ,new Item("Pass VIP Concert", 0, 40),new Item("Comté", 10, 15),new Item("foo", 10, 20) };
+        Item[] items = new Item[] { new Item("Kryptonite", 0, 80) ,new Item("Pass VIP Concert", 0, 40),new Item("Comté", 10, 15),new Item("foo", 10, 20) , new Item("Magic product", 10, 15)};
         Magasin target = new Magasin(items);
 
         target.updateQuality();
-        Item[] itemsExpected = new Item[] { new Item("Kryptonite", 0, 80) , new Item("Pass VIP Concert", -1, 0),new Item("Comté", 9, 16),new Item("foo", 9, 19)};
-        for (int i = 0; i<4; i++){
+        Item[] itemsExpected = new Item[] { new Item("Kryptonite", 0, 80) , new Item("Pass VIP Concert", -1, 0),new Item("Comté", 9, 16),new Item("foo", 9, 19),  new Item("Magic product", 9, 13)};
+        for (int i = 0; i<5; i++){
             assertEquals( itemsExpected[i].toString(), items[i].toString());
         }
     }
@@ -69,6 +69,16 @@ class MagasinTest {
             target.updateQuality();
         }
         assertEquals( new Item("foo", -5, 0).toString(), items[0].toString());
+    }
+
+    @Test
+    void updateQualityMagicProduct() {
+        Item[] items = new Item[] { new Item("Magic product", 10, 15)};
+        Magasin target = new Magasin(items);
+        for (int i = 0; i <2 ; i++) {
+            target.updateQuality();
+        }
+        assertEquals( new Item("Magic product", 8, 11).toString(), items[0].toString());
     }
 
 
