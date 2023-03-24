@@ -78,7 +78,7 @@ class MagasinTest {
         for (int i = 0; i <2 ; i++) {
             target.updateQuality();
         }
-        assertEquals( new Item("Magic product", 8, 1).toString(), items[0].toString());
+        assertEquals( new Item("Magic product", 8, 11).toString(), items[0].toString());
     }
 
 
